@@ -79,7 +79,7 @@ HTMLタグの属性
 - #uris : URI escape
 - #dates : java.util.Date 
 - #calendars : java.util.Calendar 
-- #temporals : Java8の天気関連書式
+- #temporals : Java8の日付関連書式
 - #numbers : 数字
 - #strings : 文字
 - #objects : オブジェクト
@@ -88,7 +88,7 @@ HTMLタグの属性
 - #lists , #sets , #maps :　コレクション
 - #ids : id処理
 
-#### #temporals(天気)
+#### #temporals(日付)
 ```java
 @GetMapping("/date")
 public String date(Model model) {
