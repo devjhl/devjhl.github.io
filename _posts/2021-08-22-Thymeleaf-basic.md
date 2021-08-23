@@ -29,11 +29,12 @@ HTMLタグの属性
 <th:text="${data}">
 
 コンテンツ中から直接出力する
-[[$data]]
+[[${data}]]
 ```
 
 #### 変数-SpringEL ####
-    ${...}<br>
+```html
+    ${...}
     変数表現式ではSpringELというSpringが提供する表現式使用
 
 <h1>SpringEL</h1>
@@ -56,8 +57,7 @@ HTMLタグの属性
 <div th:with="first=${users[0]}">
     <p>初めの人の名前は <span th:text="${first.username}"></span></p>
 </div>
-</body>
-</html>
+```
 
 #### 基本オブジェクト ####
 - ${#request}<br>

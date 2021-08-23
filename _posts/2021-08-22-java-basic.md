@@ -47,7 +47,7 @@ System.out.printf(format,arguments)
     equals()
 
 #### 条件演算子
-    条件式？式１：式２；<br>
+    条件式？式１：式２；
     **if文で主に使用**  
 
 #### 入出力
