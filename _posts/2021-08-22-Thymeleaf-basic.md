@@ -10,7 +10,7 @@ tags:
 toc: true
 toc_sticky: true
 
-last_modified_at: 2021-08-22T17:40:00-00:00
+last_modified_at: 2021-08-24T22:59:00~23:00
 ---
 
 **Thymeleaf**
@@ -189,6 +189,59 @@ param</a></li>
 // No-Operation
     <li>${nullData}?: _ = <span th:text="${nullData}?: _">データがないです</span></li>
 ```
+
+**属性**
+
+```html
+// 属性設定
+<input type="text" name="mock" th:name="userA" />
+// 属性追加
+-th:classappend = <input type="text" class="text" th:classappend="large"/>
+
+//チェック処理
+//HTMLで'checked'属性は'checked'属性値に関係なく'checked'という属性があればチェックになる。
+それで不便だが、Thymeleafはtrue,falseでできる
+
+- checked o <input type="checkbox" name="active" th:checked="true" /><br/>
+- checked x <input type="checkbox" name="active" th:checked="false" /><br/>
+```
+
+**繰り返し文**
+```html
+<th:each="user : ${users}">
+
+//繰り返市状態維持する
+<tr th:each="user, userStat : ${users}">
+    <td th:text="${userStat.count}">username</td>
+    <td th:text="${user.username}">username</td>
+    <td th:text="${user.age}">0</td>
+    <td>
+      index = <span th:text="${userStat.index}"></span>
+      count = <span th:text="${userStat.count}"></span>
+      size = <span th:text="${userStat.size}"></span>
+      even? = <span th:text="${userStat.even}"></span>
+      odd? = <span th:text="${userStat.odd}"></span>
+      first? = <span th:text="${userStat.first}"></span>
+      last? = <span th:text="${userStat.last}"></span>
+      current = <span th:text="${userStat.current}"></span>
+    </td>
+  </tr>
+```
+
+**条件**
+> if, unless
+> switch (default = *)
+
+**comments**
+```html
+<!--/* [[${data}]] */-->
+
+<!--/*-->
+<span th:text="${data}">html data</span>
+<!--*/-->
+
+```
+
 
 ---
 韓国語になっている講座を見てから、勉強しましたものを日本語で作成しました。<br>
