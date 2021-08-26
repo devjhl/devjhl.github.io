@@ -10,7 +10,7 @@ tags:
 toc: true
 toc_sticky: true
 
-last_modified_at: 2021-08-24T22:59:00~23:00
+last_modified_at: 2021-08-26T23:40:00~50:00
 ---
 
 **Thymeleaf**
@@ -241,7 +241,48 @@ param</a></li>
 <!--*/-->
 
 ```
+**th:block** 
 
+#### JavaScript inline
+```html
+<script th:inline="javascript">
+```
+
+**textレンダリング**
+```html
+var username = [[${user.username}]];
+inline作用前 -> var username = userA;
+inline作用後 -> var username = "userA";
+
+```
+
+**JavaScriptナチュラルテンプレート**
+
+```html
+var username2 = /*[[${user.username}]]*/ "test username";
+inline作用前 -> var username2 = /*userA*/ "test username";
+inline作用後 -> var username2 = "userA";
+
+```
+
+**オブジェクト**
+
+```html
+var user = [[${user}]];
+inline作用前 -> var user = BasicController.User(user=userA, age=10); //toString
+inline作用後 -> var user = {"username": "userA" , "age" : 10}; //JSON
+
+```
+
+**inlineのeach**
+
+```html
+<script th:inline="javascript">
+    
+    [# th:each="user, stat : ${users}"]
+    var user[[$stat.count]] = [[${user}]];
+    [/]
+```
 
 ---
 韓国語になっている講座を見てから、勉強しましたものを日本語で作成しました。<br>
