@@ -1,6 +1,6 @@
 ---
 title:  "Java Collections Framework"
-excerpt: "Collections Frameworkを整理しておくおく"
+excerpt: "Collections Frameworkを整理しておく"
 
 categories:
   - Java
