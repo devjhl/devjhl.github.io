@@ -1,5 +1,5 @@
 ---
-title:  "Thymeleaf-Spring統合とフォーム"
+title:  "Thymeleaf-Spring統合とフォーム(作成中)"
 excerpt: "Thymeleaf-Spring統合とフォーム勉強する"
 
 categories:
@@ -28,3 +28,5 @@ toc_sticky: true
 ```html
 <input type="text" id="itemName" name="itemName" th:value="*{itemName}" />
 ```
+
+出所 : https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2
