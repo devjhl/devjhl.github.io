@@ -29,7 +29,7 @@ toc_sticky: true
   - セキュリティ問題またはネットワークどうやって繋いでいくか画面を表示するスピードってどのくらい我慢できるかなど
   - 調達 (サーバ、クラウドなど)　
 
-現在のフロー課題を一つ一つ見ながら、それを解決するフロー作る
+**現在のフロー課題を一つ一つ見ながら、それを解決するフロー作る**
 <img src="/assets/images/udemyproject3.png" width="100%" height="90%"/>  
 
 <img src="/assets/images/udemyproject2.png" width="100%" height="90%"/> 
