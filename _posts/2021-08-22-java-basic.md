@@ -147,6 +147,11 @@ public enum 型名 {
   値2,
   ....
 }
+
+public ItemType[] itemTypes() {
+ return ItemType.values(); //該当enumの全部を配列に戻る
+}
+
 ```
 
 
