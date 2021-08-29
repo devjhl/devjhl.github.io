@@ -1,5 +1,5 @@
 ---
-title:  "Thymeleaf-Spring統合とフォーム(作成中)"
+title:  "Thymeleaf-Spring統合とフォーム"
 excerpt: "Thymeleaf-Spring統合とフォーム勉強する"
 
 categories:
@@ -95,5 +95,63 @@ name="regions">
 ```
 
 Thymeleafは自動でchecked属性追加する
+
+
+## ラジオボタン
+
+```html
+<!-- radio button -->
+<div>
+ <div>商品種類</div>
+ <div th:each="type : ${itemTypes}" class="form-check form-check-inline">
+ <input type="radio" th:field="${item.itemType}" th:value="$
+{type.name()}" class="form-check-input" disabled>
+ <label th:for="${#ids.prev('itemType')}" th:text="${type.description}"
+class="form-check-label">
+ BOOK
+ </label>
+ </div>
+</div>
+```
+## セレクトボックス
+
+**Controller**
+```java
+    @ModelAttribute("deliveryCodes")
+    public List<DeliveryCode> deliveryCodes() {
+        List<DeliveryCode> deliveryCodes = new ArrayList<>();
+        deliveryCodes.add(new DeliveryCode("FAST", "早い配送"));
+        deliveryCodes.add(new DeliveryCode("NORMAL", "普通配送"));
+        deliveryCodes.add(new DeliveryCode("SLOW", "遅い配送"));
+        return deliveryCodes;
+    }
+```
+
+**thymeleaf**
+```html
+<!-- SELECT -->
+<div>
+ <div>配送方法</div>
+ <select th:field="*{deliveryCode}" class="form-select">
+ <option value="">==配送方法選択==</option>
+ <option th:each="deliveryCode : ${deliveryCodes}" th:value="$
+{deliveryCode.code}"
+ th:text="${deliveryCode.displayName}">FAST</option>
+ </select>
+</div>
+<hr class="my-4">
+```
+<div>
+ <div>配送方法</div>
+ <select th:field="*{deliveryCode}" class="form-select">
+ <option value="">==配送方法選択==</option>
+ <option th:each="deliveryCode : ${deliveryCodes}" th:value="$
+{deliveryCode.code}"
+ th:text="${deliveryCode.displayName}">FAST</option>
+ </select>
+</div>
+<hr class="my-4">
+
+
 
 出所 : https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2
