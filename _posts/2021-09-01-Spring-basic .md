@@ -121,7 +121,7 @@ ex)
   ## コンストラクタ注入(推奨)
   - **不変、必須**
   - **コンストラクタが一つだけあれば<code>@Autowired</code>**省略しても自動で注入される(Spring Bean) 
-  
+
   ```java
 @Component
 public class OrderServiceImpl implements OrderService {
@@ -137,8 +137,7 @@ discountPolicy) {
  this.discountPolicy = discountPolicy;
 	 }
 }
-
-  ```
+```
 
 ## オプション
 
