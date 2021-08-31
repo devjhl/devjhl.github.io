@@ -50,7 +50,8 @@ toc_sticky: true
 
 ## Java code,XML
 - コンパイルなしにBean設定情報を変更できできる
-```xml
+
+```html
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -119,7 +120,8 @@ ex)
 
   ## コンストラクタ注入(推奨)
   - **不変、必須**
-  - **コンストラクタが一つだけあれば<code>@Autowired</code>**省略しても自動で注入される(Spring Bean)
+  - **コンストラクタが一つだけあれば<code>@Autowired</code>**省略しても自動で注入される(Spring Bean) 
+  
   ```java
 @Component
 public class OrderServiceImpl implements OrderService {
