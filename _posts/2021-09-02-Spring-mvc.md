@@ -1,0 +1,25 @@
+---
+title:  "Spring MVCパータン"
+excerpt: "Spring MVCパータンを整理しておく"
+
+categories:
+  - Spring
+tags:
+  - 基礎
+
+toc: true
+toc_sticky: true
+---
+
+## MVCパータン１
+<img src="/assets/images/mvc1.png" width="100%" height="90%"/> 
+
+## MVCパータン2
+<img src="/assets/images/mvc2.png" width="100%" height="90%"/> 
+
+**redirect ? forward**
+- リダイレクトはクライアントが改めてそのURLをリクエストする
+- フォワード：URLは変わらない
+
+
+---

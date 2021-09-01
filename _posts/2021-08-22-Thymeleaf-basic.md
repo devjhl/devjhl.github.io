@@ -67,7 +67,7 @@ HTMLタグの属性
 - ${#locale}<br>
 
 #### 便宜オブジェクト ####
-- HTTP要請パラメータ接近　： param<br>
+- HTTPリクエストパラメータ接近　： param<br>
 例) ${param.paramData}<br>
 - HTTPセッション接近: session<br>
 例) ${session.sessionData}<br>

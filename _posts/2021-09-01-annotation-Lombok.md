@@ -24,4 +24,8 @@ Springでよく使う
 ex) @Autowired省略
 ```
 
+<code>@Slf4j</code>
+- テスト　　
+  - TRACE > DEBUG > INFO > WARN > ERROR
+
 ---

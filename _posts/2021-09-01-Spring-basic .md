@@ -264,10 +264,12 @@ SpringコンテナはprototypeBeanを生成して、依存関係注入、初期�
 それで<code>@ProDestory</code>見たいな終了メソッドは呼び出さない
 
 ## ウェブスコープ
-- request ：要請一つ入って出るまでは維持するスコープそれぞれのHTTP要請ごとに別の空くインスタンスが生成されて、管理される
+- request ：リクエスト一つ入って出るまでは維持するスコープそれぞれのHTTPリクエストごとに別の空くインスタンスが生成されて、管理される
 - session : HTTP Session同一
 - application : ServletContext
 - websocket 
+
+
 
 
 
