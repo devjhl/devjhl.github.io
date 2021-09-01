@@ -19,7 +19,7 @@ toc_sticky: true
 
 **redirect ? forward**
 - リダイレクトはクライアントが改めてそのURLをリクエストする
-- フォワード：URLは変わらない
+- フォワードはURLは変わらない
 
 
 ---
