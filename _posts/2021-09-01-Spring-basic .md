@@ -150,17 +150,17 @@ public class AutowiredTest {
    }
 
    static class TestBean {
-			// 呼び出しなし	
+     // 呼び出しなし	
        @Autowired(required = false)
        public void setNoBean1(Member noBean1) {
            System.out.println("noBean1" + noBean1);
        }
-			//null 呼び出し
+      //null 呼び出し
        @Autowired
        public void setNoBean2(@Nullable Member noBean2) {
            System.out.println("noBean2" + noBean2);
        }
-			//Optionnal.empty 呼び出し
+       //Optionnal.empty 呼び出し
        @Autowired
        public void setNoBean3(Optional<Member> noBean3) {
            System.out.println("noBean3" + noBean3);
@@ -168,6 +168,109 @@ public class AutowiredTest {
    }
 }
 ```
+**照会Beanが2つ以上時？**
+> @Qualifier
+
+```java
+@Component
+@Qualifier("mainDiscountPolicy")
+public class RateDiscountPolicy implements DiscountPolicy {}
+
+@Component
+@Qualifier("fixDiscountPolicy")
+public class FixDiscountPolicy implements DiscountPolicy {}
+```
+
+```java
+@Autowired
+public OrderServiceImpl(MemberRepository memberRepository,
+ @Qualifier("mainDiscountPolicy") DiscountPolicy 
+discountPolicy) {
+ this.memberRepository = memberRepository;
+ this.discountPolicy = discountPolicy;
+}
+```
+
+**優先順位**
+>@Primary
+
+```java
+@Component
+@Primary
+public class RateDiscountPolicy implements DiscountPolicy {}
+@Component
+public class FixDiscountPolicy implements DiscountPolicy {}
+}
+```
+**照会したBeanが全部必要な時(list、Map)**
+
+```java
+public class AllBeanTest {
+
+   @Test
+    void findAllBean() {
+       ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class,DiscountService.class);
+       DiscountService discountService = ac.getBean(DiscountService.class);
+      
+　　　 Member member = new Member(1L,"userA", Grade.VIP);
+       int discountPrice = discountService.discount(member, 10000, "fixDiscountPolicy");
+
+       assertThat(discountService).isInstanceOf(DiscountService.class);
+       assertThat(discountPrice).isEqualTo(1000);
+
+   }
+
+   static class DiscountService {
+       private final Map<String, DiscountPolicy> policyMap;
+   
+       private final List<DiscountPolicy> policies;
+
+       public DiscountService(Map<String, DiscountPolicy> policyMap, List<DiscountPolicy> policies) {
+           this.policyMap = policyMap;
+           this.policies = policies;
+           System.out.println("policyMap = " + policyMap);
+           System.out.println("policies = " + policies);
+       }
+
+       public int discount(Member member, int price , String discountCode) {
+        
+           DiscountPolicy discountPolicy = policyMap.get(discountCode);
+
+           System.out.println("discountCode = " + discountCode);
+           System.out.println("discountPolicy = " + discountPolicy);
+
+           return discountPolicy.discount(member, price);
+       }
+   }
+```
+
+## アノテーション @PostConstruct  @PreDestory
+- 初期化： @PostConstructをメソッド上に宣言
+- 終了 :  @PreDestoryをメソッド上に宣言
+
+```java
+@PostConstruct
+public void init() throws Exception {
+    connect();
+    call("初期化メッセージ");
+}
+@PreDestory
+public void init() throws Exception {
+    disconnect();
+}
+```
+
+SpringコンテナはprototypeBeanを生成して、依存関係注入、初期化までだけ処理してくれる
+それで<code>@ProDestory</code>見たいな終了メソッドは呼び出さない
+
+## ウェブスコープ
+- request ：要請一つ入って出るまでは維持するスコープそれぞれのHTTP要請ごとに別の空くインスタンスが生成されて、管理される
+- session : HTTP Session同一
+- application : ServletContext
+- websocket 
+
+
+
 ---
 出所 :　https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1#
 ---
