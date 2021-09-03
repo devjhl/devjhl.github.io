@@ -1,6 +1,6 @@
 ---
-title:  "Spring MVCパータン"
-excerpt: "Spring MVCパータンを整理しておく"
+title:  "Spring MVCパターン"
+excerpt: "Spring MVCパターンを整理しておく"
 
 categories:
   - Spring
