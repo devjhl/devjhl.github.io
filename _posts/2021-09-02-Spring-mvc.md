@@ -11,10 +11,10 @@ toc: true
 toc_sticky: true
 ---
 
-## MVCパータン１
+## MVCパターン１
 <img src="/assets/images/mvc1.png" width="100%" height="90%"/> 
 
-## MVCパータン2
+## MVCパターン2
 <img src="/assets/images/mvc2.png" width="100%" height="90%"/> 
 
 **redirect ? forward**
