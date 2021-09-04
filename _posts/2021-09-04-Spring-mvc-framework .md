@@ -16,8 +16,7 @@ toc_sticky: true
 <code>@RequestMapping</code>
 **リクエスト情報をマッピングする。該当URLが呼び出されたらこのメソッドが呼び出される**
 
-<code></code>
-@Controller
+<code>@Controller</code>
 **Springが自動的にSpring Beanを登録する。(内部に@Componentがある)**
 
 ## Spring MVC
