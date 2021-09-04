@@ -13,11 +13,13 @@ toc_sticky: true
 
 ## アノテーション
 
-<code>@RequestMapping</code>
-**リクエスト情報をマッピングする。該当URLが呼び出されたらこのメソッドが呼び出される**
+<code>@RequestMapping</code><br>
+**リクエスト情報をマッピングする。<br>
+該当URLが呼び出されたらこのメソッドが呼び出される**
 
-<code>@Controller</code>
-**Springが自動的にSpring Beanを登録する。(内部に@Componentがある)**
+<code>@Controller</code><br>
+**Springが自動的にSpring Beanを登録する。<br>
+(内部に@Componentがある)**
 
 ## Spring MVC
 
@@ -65,8 +67,8 @@ public String save(
 }
 ```
 
-**RequestParam?**
-SpringはHTTPリクエストパラメータを<code>RequestParam</code>でもらえる  
+**RequestParam?**<br>
+SpringはHTTPリクエストパラメータを<code>RequestParam</code>でもらえる <br>
 RequestParam("username")は request.getParameter("username")と考えよう
 
 - **パラメータ必須**
