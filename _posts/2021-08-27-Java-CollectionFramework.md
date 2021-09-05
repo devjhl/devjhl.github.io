@@ -97,8 +97,8 @@ hs.add(2);
 **値削除**
 ```java
 HashSet<Integer> hs = new HashSet<Integer>(Arrays.asList(6,5,4));
-set.remove(5);
-set.clear();
+hs.remove(5);
+hs.clear();
 ```
 
 **大きさ**
@@ -111,7 +111,7 @@ System.out.println(hs.size());
 ```java
 HashSet<Integer> hs = new HashSet<Integer>(Arrays.asList(6,5,4));
 
-Iterator ir = set.iterator();
+Iterator ir = hs.iterator();
 while(ir.hasNext()) { // true / false
     System.out.println(ir.next());
 }
@@ -121,7 +121,7 @@ while(ir.hasNext()) { // true / false
 **値検索**
 ```java
 HashSet<Integer> hs = new HashSet<Integer>(Arrays.asList(6,5,4));
-ystem.out.println(hs.contains(5));
+System.out.println(hs.contains(5));
 ```
 
 #### Map　(HashMap)
