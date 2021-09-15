@@ -1,6 +1,6 @@
 ---
-title:  "Java8ラムダ式(作成中)"
-excerpt: "Java8ラムダ式を整理する"
+title:  "Java8"
+excerpt: "Java8を整理する"
 
 categories:
   - Java
@@ -75,5 +75,20 @@ findAll().stream()
 .filter(m -> m.getLoginId().equals(loginId))
 .findFirst();
 ```
+## Optional
+- 値をラップし、 その値がnullかもしれない ことを表現する
+- リターン値で使う推奨
+
+**作用**
+- **Optional.of()**
+- **Optional.ofNullable()**
+- **Optional.empty()**
+
+**値があるかどうか**  
+- **isPresent()**
+- **isEmpty()** //Java 11
+
+**値持ってくる**　　
+- **get**
 
 ---
