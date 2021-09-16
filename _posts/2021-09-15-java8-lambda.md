@@ -65,7 +65,7 @@ public class FromCollectionExample {
 }
 ```
 
-## Stream API 
+## Stream 
 
 - **filter**
 	- **フィルター処理とか特定の値を取得する**
@@ -84,11 +84,30 @@ findAll().stream()
 - **Optional.ofNullable()**
 - **Optional.empty()**
 
-**値があるかどうか**  
+**値があるかどうか確認**  
 - **isPresent()**
 - **isEmpty()** //Java 11
 
 **値持ってくる**　　
 - **get**
+
+**Optionalに値がある場合その値を持って～～をする**
+- **ifPresent(Counsumer)**
+
+**Optionalに値がある場合持ってきてない場合には～～をリターンする**
+- **orElse(T)**
+
+**Optionalに値がある場合持ってきてない場合には～～をする**
+- **orElseGet**
+
+**Optionalに値がある場合持ってきてない場合はエラーを投げる**
+- **orElseThrow()**
+
+- **filter**
+	- **フィルター処理とか特定の値を取得する**
+
+  **Optionalに中のある値を変換する**
+  - **Optional map(Function)**
+  - **Optional flatMap(Function)**
 
 ---
