@@ -3,7 +3,7 @@ title:  "手を動かして学ぶITプロジェクト"
 excerpt: "Udemyコースで勉強する"
 
 categories:
-  - udemy
+  -  Udemy
 tags:
   - ドキュメント
 
