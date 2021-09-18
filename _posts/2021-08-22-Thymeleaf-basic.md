@@ -287,5 +287,6 @@ inline作用後 -> var user = {"username": "userA" , "age" : 10}; //JSON
 ---
 韓国語になっている講座を見てから、勉強しましたものを日本語で作成しました。<br>
 
-出所 : https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2
+出所 : 
+<https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2>
 
