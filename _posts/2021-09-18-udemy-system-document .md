@@ -11,6 +11,12 @@ toc: true
 toc_sticky: true
 ---
 
+udemyコース
+
+手を動かして学ぶITプロジェクトの資料作成！システム開発のドキュメンテーション技術と成果物テンプレート
+<https://www.udemy.com/course/it-yugtl/>
+
+
 ##　テスト
 - 作ったものがちゃんと予定通りに仕様通りにできているかということを確認するフェーズ
 
@@ -35,7 +41,7 @@ toc_sticky: true
 
 <code>スケジュール</code>   
 
-手を動かして学ぶITプロジェクトの資料作成！システム開発のドキュメンテーション技術と成果物テンプレート
-<https://www.udemy.com/course/it-yugtl/>
+
+
 
 ---
