@@ -113,8 +113,7 @@ public class RequestHeaderController {
 		Locale locale,
 		@RequestHeader MultiValueMap<String, String>　headerMap,
 		@RequestHeader("host") String host,
-		@CookieValue(value = "myCookie", required = false)　String cookie
-												 ) 
+		@CookieValue(value = "myCookie", required = false)　String cookie) 
 {
 				 log.info("request={}", request);
 				 log.info("response={}", response);
@@ -152,6 +151,79 @@ public class RequestHeaderController {
 
 @Slf4
 - **log**
+
+## HTTPリクエスト　ー  クエリパラメータ、HTML Form
+- クライアントからサーバーでリクエストダークを伝達する
+
+**HTTPリクエストパラメータ-@RequestParam**
+```java
+/**
+ * @RequestParam 
+ * - パラメータ名でバインディング
+ * @ResponseBody
+ * - View 照会を無視し, HTTP message bodyに直接該当内容入力
+ */
+@ResponseBody
+@RequestMapping("/request-param-v2")
+public String requestParamV2(
+ @RequestParam("username") String memberName, @RequestParam("age") int memberAge) {
+
+ log.info("username={}, age={}", memberName, memberAge);
+ return "ok";
+
+}
+```
+- @RequestParam("username") String memberName → request.getParameter("username")
+- パラメータ、名と変数名が同じと@RequestParam(name="xx")省略可能
+
+**Springは該当省略し次の規則を適用する**
+String , int , Integer単純タイプ　= @RequestParam　　
+以外 = @ModelAttribute
+
+- 必須　：　required(trueが基本値)
+- 基本値　：　defaultValue 
+
+**パラメータをMapで照会する-requestParamMap**
+```java
+/**
+ * @RequestParam Map, MultiValueMap
+ * Map(key=value)
+ * MultiValueMap(key=[value1, value2, ...] ex) (key=userIds, value=[id1, id2])
+ */
+@ResponseBody
+@RequestMapping("/request-param-map")
+public String requestParamMap(@RequestParam Map<String, Object> paramMap) {
+
+ log.info("username={}, age={}", paramMap.get("username"),
+ paramMap.get("age"));
+ return "ok";
+}
+```
+- @RequestParam Map
+    - Map(key=value)
+- @RequestParam MultiValueMap
+    - MultiValueMap(key=[value1, value2, ...] ex) (key=userIds, value=[id1, id2])
+
+**HTTPリクエストパラメータ-@ModelAttribute**
+```java
+/** * @ModelAttribute
+ * model.addAttribute(helloData)コードも一緒に自動的に適用される 
+ */
+@ResponseBody
+@RequestMapping("/model-attribute-v1")
+public String modelAttributeV1(@ModelAttribute HelloData helloData) {
+
+ log.info("username={}, age={}", helloData.getUsername(),
+helloData.getAge());
+
+ return "ok";
+}
+```
+
+**@RequestBody - HTTPメッセージボディ情報を照会する**
+
+**@RestController - HTTPメッセージボディに直接データを入力する**
+
 
 
 ---
