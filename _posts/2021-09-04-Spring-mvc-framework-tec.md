@@ -108,15 +108,14 @@ public class RequestHeaderController {
 
 	 @RequestMapping("/headers")
 	 public String headers(HttpServletRequest request,
-												 HttpServletResponse response,
-												 HttpMethod httpMethod,
-												 Locale locale,
-												 @RequestHeader MultiValueMap<String, String>
-headerMap,
-												 @RequestHeader("host") String host,
-												 @CookieValue(value = "myCookie", required = false)
-String cookie
-												 ) {
+		HttpServletResponse response,
+		HttpMethod httpMethod,
+		Locale locale,
+		@RequestHeader MultiValueMap<String, String>　headerMap,
+		@RequestHeader("host") String host,
+		@CookieValue(value = "myCookie", required = false)　String cookie
+												 ) 
+{
 				 log.info("request={}", request);
 				 log.info("response={}", response);
 				 log.info("httpMethod={}", httpMethod);
@@ -141,7 +140,7 @@ String cookie
 		- 基本値　: defaultValue
 - MultiValueMap
 	- 一つのキーにいくつ値をもらえる
-		**- **keyA=value1&keyA=value2****
+		- **keyA=value1&keyA=value2**
 		```java
 		MultiValueMap<String, String> map = new LinkedMultiValueMap();
 		map.add("keyA", "value1");
