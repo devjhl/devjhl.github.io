@@ -14,9 +14,6 @@ toc_sticky: true
 MVC講座
 <https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1#>
 
-<code>@RestController</code>
-**ビューではなく、HTTPメッセージボディにすぐ入力する**
-
 ## HTTPメソッドマッピング
 ```java
 /**
