@@ -3,7 +3,7 @@ title:  "HTTPクッキー"
 excerpt: "HTTPクッキーを整理する"
 
 categories:
-  - Http
+  - HTTP
 tags:
   - クッキー
 
