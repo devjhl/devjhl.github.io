@@ -3,9 +3,9 @@ title:  "HTTPクッキー"
 excerpt: "HTTPクッキーを整理する"
 
 categories:
-  - Spring
+  - Http
 tags:
-  - フレームワーク
+  - クッキー
 
 toc: true
 toc_sticky: true
