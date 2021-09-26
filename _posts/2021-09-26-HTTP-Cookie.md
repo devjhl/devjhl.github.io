@@ -27,6 +27,21 @@ ex)  set-cookie: sessionId=abcde1234; expires=Sat, 26-Dec-2020 00:00:00 GMT; pat
 - サーバーに転送しないでウェブブラウザ内部にデータをセーブしたいとウェブストレージ(localStorage, sessionStorage)参考
 - セキュリティに敏感なデータは保存しないようにしよう。
 
+## クッキー　domain
+- ex) domain=example.org
+- 明示:明示した文書基準ドメイン+サブドメインを含む。
+  - domain=example.orgを指定してクッキーを作成
+    - example.orgはもちろん、dev.example.orgもクッキーにアクセス
+- 省略:現在の文書基準ドメインのみ適用
+  - [example.org]でクッキーを作成し、domain指定を省略
+    - [example.org]でのみクッキーアクセスだが、dev.example.orgはクッキーにアクセスしない
+
+
+## クッキー　Path
+-  dev.example.orgはクッキーにアクセスしない
+- このパスを含む下位パスページのみクッキーアクセス
+- 一般的にpath=/ルートで指定
+
 ## クッキー　セキュリティ
 **Secure, HttpOnly, SameSite**
 
