@@ -138,14 +138,14 @@ bindingResult, RedirectAttributes redirectAttributes) {
 ```
 
 ## Bean Validation
-- 依存関係追加  
-<code>build.gradle</code>  
+- 依存関係追加<br> 
+<code>build.gradle</code>  <br> 
 <code>implementation 'org.springframework.boot:spring-boot-starter-validation'</code>
 
-**検証アノテーション**  
-@NotBlank  
-@NotNull  
-@Range(min = 1000, max = 1000000)  
+**検証アノテーション**  <br> 
+@NotBlank  <br> 
+@NotNull  <br> 
+@Range(min = 1000, max = 1000000)  <br> 
 @Max(9999)  
 
 **message属性**  
