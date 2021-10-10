@@ -138,20 +138,20 @@ bindingResult, RedirectAttributes redirectAttributes) {
 ```
 
 ## Bean Validation
-- 依存関係追加
-<code>build.gradle</code>
+- 依存関係追加  
+<code>build.gradle</code>  
 <code>implementation 'org.springframework.boot:spring-boot-starter-validation'</code>
 
-**検証アノテーション**
-@NotBlank
-@NotNull
-@Range(min = 1000, max = 1000000)
-@Max(9999)
+**検証アノテーション**  
+@NotBlank  
+@NotNull  
+@Range(min = 1000, max = 1000000)  
+@Max(9999)  
 
-**message属性**
+**message属性**  
 (message = "")
 
-**groups(@Validated)**
+**groups(@Validated)**  
 - 同一モデルオブジェクトを登録と修正時別々に検証する方法
 
 ---
