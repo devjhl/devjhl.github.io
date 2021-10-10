@@ -111,6 +111,7 @@ bindingResult.rejectValue("price", "range", new Object[]{1000, 1000000}, null)
 
 **どのようにエラーコードを設計することか?**
 - 最も良い方法は汎用性で使いながら、細かく作成しなければならない場合には細かい内容が適用されるようメッセージに段階を置く方法である。
+
 ```html
 #Level1
 required.item.itemName: 商品名は必須です。
