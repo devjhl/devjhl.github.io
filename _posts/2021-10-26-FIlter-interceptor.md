@@ -81,7 +81,6 @@ public class LoginCheckFilter implements Filter {
   }
 }
 
-```java
 @Bean
 public FilterRegistrationBean loginCheckFilter() {
    FilterRegistrationBean<Filter> filterRegistrationBean = new
