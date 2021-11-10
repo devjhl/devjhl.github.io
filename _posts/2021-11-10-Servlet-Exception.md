@@ -28,8 +28,7 @@ public class WebServerCustomizer implements
         factory.addErrorPages(errorPage404,errorPage500,errorPageEx);
     }
 }
-```　　
-```java
+
 @Slf4j
 @Controller
 public class ErrorPageController {
@@ -54,7 +53,8 @@ response) {
 2. WASはエラーページ径路を探して内部でエラーページを呼び出す。この時エラーページ径路でフィルター、
 サーブレット、インターセプター、コントローラーが全部もう一度呼び出す。　　
 
-WASはエラー情報をrequestのattributeに追加して引渡す　　
+WASはエラー情報をrequestのattributeに追加して引渡す  
+　　
 必要ならエラーページで伝達したエラー情報を使用できる　　
 
 ```java
