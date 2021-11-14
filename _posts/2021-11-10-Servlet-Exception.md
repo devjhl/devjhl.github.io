@@ -107,7 +107,8 @@ request.getAttribute(ERROR_STATUS_CODE));
 ```
 
 **DispatcherType**
-- クライアントから発生した正常リクエストか、もしくはエラーページを出力するための内部リクエストか区分なのか区分できなければならない。サーブレットは<code>'DispatcherType'</code>という追加情報を提供する
+- クライアントから発生した正常リクエストか、もしくはエラーページを出力するための内部リクエストか区分できなければならない。  
+サーブレットは<code>'DispatcherType'</code>という追加情報を提供する
 
 ```java
   @Slf4j
