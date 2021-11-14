@@ -16,6 +16,7 @@ Spring mvc講座
 <https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-2>
 
 ```java
+
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 	@Override
@@ -28,4 +29,6 @@ public class WebConfig implements WebMvcConfigurer {
 						, "/error", "/error-page/**" // エラーページ径路
 				);
 	}
+
+```
 ---
