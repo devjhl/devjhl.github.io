@@ -105,4 +105,55 @@ request.getAttribute(ERROR_STATUS_CODE));
  }
 }
 ```
+
+**DispatcherType**
+- クライアントから発生した正常リクエストか、もしくはエラーページを出力するための内部リクエストか区分なのか区分できなければならない。サーブレットは<code>'DispatcherType'</code>という追加情報を提供する
+
+```java
+  @Slf4j
+  public class LogFilter implements Filter {
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+    log.info("log filter init");
+  }
+
+  @Override
+  public void doFilter(ServletRequest request, ServletResponse response,
+    FilterChain chain) throws IOException, ServletException {
+      HttpServletRequest httpRequest = (HttpServletRequest) request;
+      String requestURI = httpRequest.getRequestURI();
+      String uuid = UUID.randomUUID().toString();
+     
+      try {
+         log.info("REQUEST [{}][{}][{}]", uuid,
+         request.getDispatcherType(), requestURI);
+         chain.doFilter(request, response);
+      } catch (Exception e) {
+         throw e;
+      } finally {
+        log.info("RESPONSE [{}][{}][{}]", uuid,
+        request.getDispatcherType(), requestURI);
+        }
+      }
+    @Override
+    public void destroy() {
+      log.info("log filter destroy");
+      }
+    }
+
+    @Configuration
+    public class WebConfig implements WebMvcConfigurer {
+
+    @Bean
+    public FilterRegistrationBean logFilter() {
+      FilterRegistrationBean<Filter> filterRegistrationBean = newFilterRegistrationBean<>();
+      filterRegistrationBean.setFilter(new LogFilter());
+      filterRegistrationBean.setOrder(1);
+      filterRegistrationBean.addUrlPatterns("/*");
+      filterRegistrationBean.setDispatcherTypes(DispatcherType.REQUEST,DispatcherType.ERROR);
+      return filterRegistrationBean;
+      }
+    }
+```
+
 ---
