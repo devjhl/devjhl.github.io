@@ -102,7 +102,7 @@ analytics:
 # Site Author
 author:
   name             : "Jeonghyeon Lee"
-  avatar           : "/assets/images/pro.jpg"
+  avatar           : # "/assets/images/pro.jpg"
   bio              : "勉強するエンジニアになろう"
   location         : "Japan"
   email            :
