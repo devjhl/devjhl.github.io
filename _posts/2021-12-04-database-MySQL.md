@@ -90,20 +90,20 @@ TIME_DIFF
 
 LAST_DAY
 
-DATE_FORMAT
-%Y	XXXX
-%y  XX
-%M	月 英語
-%m	月 数字
-%D	(1st, 2nd, 3rd...)
-%d, %e	(01 ~ 31)
-%T	hh:mm:ss
-%r	hh:mm:ss AM/PM
-%H, %k	(~23)
-%h, %l	(~12)
-%i	文
-%S, %s	秒
-%p	AM/PM
+DATE_FORMAT <br>
+%Y	XXXX <br>
+%y  XX <br>
+%M	月 英語 <br>
+%m	月 数字 <br>
+%D	(1st, 2nd, 3rd...) <br>
+%d, %e	(01 ~ 31) <br>
+%T	hh:mm:ss <br>
+%r	hh:mm:ss AM/PM <br>
+%H, %k	(~23) <br>
+%h, %l	(~12) <br>
+%i	文 <br>
+%S, %s	秒 <br>
+%p	AM/PM <br>
 
 #### 以外
 
