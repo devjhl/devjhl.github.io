@@ -21,8 +21,8 @@ AND, &&
 OR, ||  
 =  
 !=, <>  
->, <  
->=, <=  
+, > <  
+, >=, <=  
 BETWEEN {MIN} AND {MAX}  
 NOT BETWEEN {MIN} AND {MAX}  
 IN (...)  
@@ -64,12 +64,12 @@ REPLACE(S,A,B) AをBに変更 <br>
 INSTR(S,s) Sの中sの最初位置変換なかったら０ <br>
 CAST(A,T) <br>
 
-####　時間・日付関数
-CURRENT_DATE, CURDATE	
-CURRENT_TIME, CURTIME	
-CURRENT_TIMESTAMP, NOW
-DATE 文字列によって日付生成
-TIME　文字列によって時間生成
+#### 時間・日付関数
+CURRENT_DATE, CURDATE	<br>
+CURRENT_TIME, CURTIME	<br>
+CURRENT_TIMESTAMP, NOW <br>
+DATE 文字列によって日付生成<br>
+TIME　文字列によって時間生成<br>
 
 YEAR	
 MONTHNAME
@@ -105,10 +105,11 @@ DATE_FORMAT
 %S, %s	秒
 %p	AM/PM
 
-####　以外
+#### 以外
 
 IF(条件,T,F)
 もっとも複雑な条件はCASE文を使う
 
 IFNULL(A,B) AがNULLならＢ出力
+
 ---
