@@ -1,5 +1,5 @@
 ---
-title:  "MySQL SELECT文"
+title:  "MySQL SELECT文とグループ化"
 excerpt: ""
 
 categories:
@@ -34,7 +34,7 @@ toc_sticky: true
 #### DISTINCT 
 - 重複排除
 
-```SQL
+```sql
 SELECT DISTINCT CategoryID
 FROM Products;
 ```
