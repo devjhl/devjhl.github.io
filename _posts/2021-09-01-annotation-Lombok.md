@@ -18,10 +18,14 @@ Springでよく使う
 ```java
 @Getter
 @Setter
+@Data // Getter + Setter
 @ToString
 @RequiredArgsConstructor  
 - finalが付けているフィールドをあつめて生成者を自動で作ってくる(コードは見えないが、呼び出しが可能)
 ex) @Autowired省略
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder 
 ```
 
 <code>@Slf4j</code>
