@@ -51,11 +51,23 @@ JOIN Orders O
   ON O.OrderID = D.OrderID
 GROUP BY C.CategoryID, P.ProductID;
 ```
-#### SELF JOIN 
-**同じテーブルJOINする**
+#### SELF JOIN
 
 #### LEFT/RIGHT OUTER JOIN
-
+```sql
+SELECT
+  C.CustomerName, S.SupplierName,
+  C.City, C.Country
+FROM Customers C
+LEFT JOIN Suppliers S
+ON C.City = S.City AND C.Country = S.Country;
+```
 #### CROSS JOIN
-
+```sql
+SELECT
+  E1.LastName, E2.FirstName
+FROM Employees E1
+CROSS JOIN Employees E2
+ORDER BY E1.EmployeeID;
+```
 ---
