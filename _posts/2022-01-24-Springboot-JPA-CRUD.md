@@ -1,6 +1,6 @@
 ---
 title:  SpringBoot　JPA　CRUD
-excerpt: 
+excerpt: CRUD練習
 
 categories:
   - SpringBoot
