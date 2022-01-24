@@ -1,6 +1,6 @@
 ---
-title:  SpringBoot　JPA　CRUD
-excerpt: CRUD練習
+title:  "SpringBoot　JPA　CRUD"
+excerpt: "CRUD練習"
 
 categories:
   - SpringBoot
@@ -78,6 +78,14 @@ public userList<User> list() {
   return UserRepository.findAll();
 }
 
+@GetMapping("/crud/user")
+	public List<User> pageList(@PageableDefault(size=2, sort="id", direction = Direction.DESC)Pageable pageable){
+		Page<User> pagingUser = userRepository .findAll(pageable);
+		
+		List<User> users = pagingUser.getContent();
+		return users;
+	}
+
 @Transactional
 @PutMapping("/crud/user/{id}")
 public User updateUser(@PathVariable int id, @RequestBody User requestUser) {
@@ -94,7 +102,7 @@ public String deleteUser(@PathVariable int id) {
   try {
     userRepository.deleteById(id);
   } catch(EmptyResultDataAccessException e) {
-    return "作成に失敗しました。該当のidが存在しません。";
+    return "削除に失敗しました。該当のidが存在しません。";
   }
 
   return "削除完了しました。";
